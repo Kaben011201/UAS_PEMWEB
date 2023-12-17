@@ -1,0 +1,97 @@
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.inputValue {
+    background-color: #B4B4B3;
+    width: 40%;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+input {
+    width: 200px;
+    padding: 2px;
+
+}
+label{
+    width: 30%;
+}
+span {
+    margin-right: 5px;
+}
+.inputform {
+    display: flex;
+    margin-bottom: 7px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+.create, .edit, .hapus, .submit{
+    background: gray;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 3px 5xp;
+    margin-bottom: 10px;
+    height: 30px;
+    width: 60px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+.create{
+    width: 150px;
+}
+.display{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    background-color: antiquewhite;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.dis{
+    display: flex;
+}
+
+.tombol{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cari{
+    height: 24px;
+}
+
+.frame-display{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.submit{
+    background-color: white;
+    color: black;
+}
+
+.editValue{
+    width: 70%;
+    position: absolute;
+    display: flex;
+}
+

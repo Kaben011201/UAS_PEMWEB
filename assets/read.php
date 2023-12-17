@@ -6,73 +6,18 @@ session_start(); ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UAS PEMWEB</title>
-    <style>
-        .inputValue {
-            background-color: #B4B4B3;
-            width: 60%;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        input {
-            width: auto;
-            padding: 2px;
-        }
-        label{
-            width: 30%;
-        }
-        span {
-            margin-right: 5px;
-        }
-        .inputform {
-            display: flex;
-            margin-bottom: 7px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .create, .edit, .hapus{
-            background: gray;
-            border: none;
-            border-radius: 3px;
-            color: white;
-            padding: 3px 5xp;
-            margin-bottom: 10px;
-        }
-        .display{
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 10px;
-        }
-
-        .dis{
-            display: flex;
-            width: 50%;
-        }
-
-    </style>
+    <link rel="stylesheet" href="../style/read.css">
 </head>
 <body>
-    <form method="post" action="">
-        <input type="text" name="search" id="search">
-        <input type="submit" name="submit" value="Cari">
+    <form class="cari" method="post" action="">
+        <input class="column" type="text" name="search" id="search">
+        <button class="cari" type="submit" name="submit" value="Cari">Cari</button>
     </form><br>
 
     <button class="create" onclick="forCreate()">Create</button>
     
     <div class="displayInputFrame"></div>
-
+    <div class="frame-display">
     <?php
         include '../connection.php';
         $search = isset($_POST['search']) ? $connect->real_escape_string($_POST['search']) : '';
@@ -122,16 +67,18 @@ session_start(); ?>
                         <div class='dis'>
                             <label>Alamat</label><span>:</span>{$get_row['alamat']}
                         </div>
-                    </section>
                 ";
 
-                echo "<form method='post' action='delete.php'>
+                echo "<div class='tombol'>
+                    <form method='post' action='delete.php'>
                         <input type='hidden' name='ktp' value='" . $get_row['ktp'] . "'>
                         <input class='hapus' type='submit' value='Hapus'>
                     </form>
                     <button class='edit' onclick='showEdit(" . $get_row['ktp'] . ")'>Edit</button><br><br>
-
-                    <div id='editForm{$get_row['ktp']}' style='display:none;'>
+                    </div>
+                    </section>
+            
+                    <div class='editValue' id='editForm{$get_row['ktp']}' style='display:none;'>
                         <form class='inputValue' method='post' action='update.php'>
                             <div class='inputform'>
                                 <label for=''>KTP</label><span>:</span>
@@ -153,11 +100,11 @@ session_start(); ?>
                                 <input type='usia' name='usia' id='usia' value='{$get_row['usia']}'>
                             </div>
 
-                            <div class='inputform'><span>:</span>                              
-                                <label for=''>Jenis Kelamin</label>
+                            <div class='inputform'>                            
+                                <label for=''>Jenis Kelamin</label><span>:</span>  
                                 <select name='jenkel' id='jenkel'>
-                                <option value='Pria' <?php if ({$get_row['jenkel']} === 'Pria') echo 'selected='selected''; ?>>Pria</option>
-                                <option value='Wanita' <?php if ({$get_row['jenkel']} === 'Wanita') echo 'selected='selected''; ?>>Wanita</option>
+                                <option value='Pria' <?php if ({$get_row['jenkel']} === 'Pria') echo 'selected='selected''; ?>Pria</option>
+                                <option value='Wanita' <?php if ({$get_row['jenkel']} === 'Wanita') echo 'selected='selected''; ?>Wanita</option>
                                 
                                 </select>
                             </div>
@@ -179,6 +126,7 @@ session_start(); ?>
             }
         }  
     ?>
+    </div>
 
     <script>
             function forCreate(){
@@ -186,7 +134,7 @@ session_start(); ?>
                     <form class="inputValue" action="create.php" method="POST">
                         <div class="inputform">
                             <label for="">KTP</label><span>:</span> 
-                            <input type="number" name="ktp" id="ktp" placeholder="contoh : 121140087" required>
+                            <input type="number" name="ktp" id="ktp" required>
                         </div>
 
                         <div class="inputform">
@@ -205,7 +153,7 @@ session_start(); ?>
                         </div>
 
                         <div class="inputform">
-                        <label for=''>Jenis Kelamin</label>
+                        <label for=''>Jenis Kelamin</label><span>:</span> 
                                 <select name='jenkel' id='jenkel'>
                                     <option value='pria'>Pria</option>
                                     <option value='wanita'>Wanita</option>
@@ -221,7 +169,7 @@ session_start(); ?>
                             <label for="">Alamat</label><span>:</span> 
                             <textarea name='alamat' id='alamat' cols='30' rows='5'></textarea>
                         </div>
-                        <input style="width: 60px;" type="submit" name="submit" id="submit">
+                        <input class="submit" style="width: 60px;" type="submit" name="submit" id="submit">
                     </form>
                 `;
                 document.querySelector('.displayInputFrame').innerHTML = html;

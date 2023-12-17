@@ -8,12 +8,12 @@ session_start(); ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="../style/index.css">
 </head>
 
 <body>
-    <p class="info-login">Username : admin<br>Password : 123456</p>
-    <p class="title">Jemaat Gereja</p>
-    <form action="login.php" method="POST">
+    <p class="akun">Username : aku<br>Password : 123456</p>
+    <form class="form-container" action="login.php" method="POST">
         <h2>MASUKKAN AKUN</h2>
         <?php if (isset($_SESSION['error'])) { ?>
             <p class="error">
@@ -21,13 +21,13 @@ session_start(); ?>
             </p>
             <?php unset($_SESSION['error']); ?>
         <?php } ?>
-        <label>username:</label>
-        <input type="text" name="username" placeholder="username">
+        <label>Username:</label>
+        <input class="login-frame" type="text" name="username" placeholder="Username"><br>
 
         <label>Password :</label>
-        <input type="password" name="password" placeholder="Password">
+        <input class="login-frame" type="password" name="password" placeholder="Password"><br>
 
-        <button type="submit">Login</button>
+        <button class="submit" type="submit">Login</button>
     </form>
 
     <script>

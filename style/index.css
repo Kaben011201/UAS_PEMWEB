@@ -1,0 +1,36 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h2{
+    text-align: center;
+    color: antiquewhite;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: auto;
+}
+
+.login-frame{
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 5px;
+}
+
+.submit{
+    margin: auto;
+    width: 20%;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+}
