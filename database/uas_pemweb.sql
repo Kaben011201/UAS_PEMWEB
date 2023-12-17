@@ -19,7 +19,7 @@ VALUES
 CREATE TABLE akun(
     username VARCHAR(100),
     password VARCHAR(100)
-)
+);
 
 
 INSERT INTO akun (username, password) VALUES
