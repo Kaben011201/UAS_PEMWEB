@@ -1,14 +1,13 @@
 <?php
 session_start(); ?>
 
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="style/index.css">
 </head>
 
 <body>
@@ -34,7 +33,7 @@ session_start(); ?>
         function checkCookie() {
             var userIdCookie = getCookie('user_id');
             if (userIdCookie) {
-                window.location.href = 'read.php';
+                window.location.href = 'assets/read.php';
             }
         }
 
@@ -66,7 +65,7 @@ session_start(); ?>
                     .then(data => {
                         if (data.success) {
                             document.cookie = "user_id=" + encodeURIComponent(data.user_id) + "; expires=" + new Date(new Date().getTime() + 30 * 24 * 60 * 60 * 1000).toUTCString() + "; path=/";
-                            window.location.href = 'read.php';
+                            window.location.href = 'assets/read.php';
                         } else {                            
                             window.location.href = 'index.php';
                         }

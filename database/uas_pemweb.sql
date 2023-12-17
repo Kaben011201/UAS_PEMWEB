@@ -12,9 +12,9 @@ CREATE TABLE jemaat(
 
 INSERT INTO jemaat (ktp, nama, tgllahir, usia, jenkel, nohp, alamat)
 VALUES
-    (123, 'John Doe', '1990-05-15', 32, 'Male', '1234567890', '123 Main Street'),
-    (456, 'Jane Smith', '1985-08-22', 37, 'Female', '9876543210', '456 Oak Avenue'),
-    (789, 'Bob Johnson', '1995-03-10', 27, 'Male', '5551234567', '789 Pine Lane');
+    (123, 'John Doe', '1990-05-15', 32, 'Pria', '1234567890', '123 Main Street'),
+    (456, 'Jane Smith', '1985-08-22', 37, 'Wanita', '9876543210', '456 Oak Avenue'),
+    (789, 'Bob Johnson', '1995-03-10', 27, 'Pria', '5551234567', '789 Pine Lane');
 
 CREATE TABLE akun(
     username VARCHAR(100),
