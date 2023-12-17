@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if (mysqli_num_rows($checkDuplicate) > 0) {
         echo '
             <script>alert("Data sudah ada!");
-            window.location.href = "index.php";
+            window.location.href = "read.php";
             </script>
             ';
     } else {
@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if (mysqli_query($connect, $sql)) {
             echo '
             <script>alert("Data Berhasil Ditambah!");
-            window.location.href = "index.php";
+            window.location.href = "read.php";
             </script>
             ';
         }

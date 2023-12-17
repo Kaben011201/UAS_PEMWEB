@@ -16,4 +16,11 @@ VALUES
     (456, 'Jane Smith', '1985-08-22', 37, 'Female', '9876543210', '456 Oak Avenue'),
     (789, 'Bob Johnson', '1995-03-10', 27, 'Male', '5551234567', '789 Pine Lane');
 
+CREATE TABLE akun(
+    username VARCHAR(100),
+    password VARCHAR(100)
+)
 
+
+INSERT INTO akun (username, password) VALUES
+('aku', '123456');

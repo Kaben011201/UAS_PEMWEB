@@ -18,7 +18,7 @@ $result = $connect->query($sql);
 
 if ($result) {
     echo '<script>alert("Data berhasil diedit");
-    window.location.href = "index.php";
+    window.location.href = "read.php";
     </script>';
 } else {
     echo "Error updating record: " . $connect->error;

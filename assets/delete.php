@@ -10,6 +10,6 @@ $result = $connect->query($sql);
 
 if($result){
     echo '<script>alert("Data dihapus");
-    window.location.href = "index.php";
+    window.location.href = "read.php";
     </script>';
 }
