@@ -20,7 +20,7 @@ session_start(); ?>
                 <?php echo $_SESSION['error']; ?>
             </p>
             <?php unset($_SESSION['error']); ?>
-        <?php } ?>
+        <?php  }?>
         <label>Username:</label>
         <input class="login-frame" type="text" name="username" placeholder="Username"><br>
 

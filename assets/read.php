@@ -7,6 +7,22 @@ session_start(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UAS PEMWEB</title>
     <link rel="stylesheet" href="../style/read.css">
+    <script>
+        function validateForm() {
+            var ktp = document.forms["myForm"]["ktp"].value;
+            var nama = document.forms["myForm"]["nama"].value;
+            var tgllahir = document.forms["myForm"]["tgllahir"].value;
+            var usia = document.forms["myForm"]["usia"].value;
+            var jenkel = document.forms["myForm"]["jenkel"].value;
+            var nohp = document.forms["myForm"]["nohp"].value;
+            var alamat = document.forms["myForm"]["alamat"].value;
+
+            if (ktp == "" || nama == "" || tgllahir == "" || usia == "" || jenkel == "" || nohp == "" || alamat == "") {
+                alert("Semua field harus diisi");
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
     <form class="cari" method="post" action="">
@@ -131,25 +147,25 @@ session_start(); ?>
     <script>
             function forCreate(){
                 let html = `
-                    <form class="inputValue" action="create.php" method="POST">
+                    <form id="form" name='myForm' class="inputValue" action="create.php" method="POST">
                         <div class="inputform">
                             <label for="">KTP</label><span>:</span> 
-                            <input type="number" name="ktp" id="ktp" required>
+                            <input type="number" name="ktp" id="ktp">
                         </div>
 
                         <div class="inputform">
                             <label for="">Nama Lengkap</label><span>:</span> 
-                            <input type="text" name="nama" id="nama" required>
+                            <input type="text" name="nama" id="nama">
                         </div>
 
                         <div class="inputform">
                             <label for="">Tanggal Lahir</label><span>:</span> 
-                            <input type="date" name="tgllahir" id="tgllahir" required>
+                            <input type="date" name="tgllahir" id="tgllahir">
                         </div>
 
                         <div class="inputform">
                             <label for="">Usia</label><span>:</span> 
-                            <input type="number" name="usia" id="usia" required>
+                            <input type="number" name="usia" id="usia">
                         </div>
 
                         <div class="inputform">
@@ -162,18 +178,20 @@ session_start(); ?>
 
                         <div class="inputform">
                             <label for="">No HP</label><span>:</span> 
-                            <input type="tel" name="nohp" id="nohp" required>
+                            <input type="tel" name="nohp" id="nohp">
                         </div>
 
                         <div class="inputform">
                             <label for="">Alamat</label><span>:</span> 
                             <textarea name='alamat' id='alamat' cols='30' rows='5'></textarea>
                         </div>
-                        <input class="submit" style="width: 60px;" type="submit" name="submit" id="submit">
+                        <input onclick="validateForm()" class="submit" style="width: 60px;" type="submit" name="submit" id="submit">
                     </form>
                 `;
                 document.querySelector('.displayInputFrame').innerHTML = html;
+
             }
+
             function showEdit(ktp) {
                 document.querySelectorAll('[id^="editForm"]').forEach(form => {
                     form.style.display = 'none';
@@ -181,6 +199,8 @@ session_start(); ?>
 
                 document.getElementById(`editForm${ktp}`).style.display = 'block';
             }
+
+            
         </script>
 </body>
 </html>
