@@ -2,27 +2,26 @@
 
 include "../connection.php";
 
-$id = $_POST['id'];
-$name = $_POST['name'];
-$type = $_POST['type'];
-$new_image = $_POST['new_image'];
-$old_image = $_POST['old_image'];
-$new_base64code = $_POST['new_base64code'];
+$ktp = $_POST['ktp'];
+$nama = $_POST['nama'];
+$tgllahir = $_POST['tgllahir'];
+$usia = $_POST['usia'];
+$jenkel = $_POST['jenkel'];
+$nohp = $_POST['nohp'];
+$alamat = $_POST['alamat'];
 
-$sql = "UPDATE asset SET
-        name = '$name', type = '$type', image = '$new_image'
-        WHERE id = '$id'";
+$sql = "UPDATE jemaat SET
+        nama = '$nama', tgllahir = '$tgllahir', usia = '$usia', jenkel = '$jenkel', nohp = '$nohp', alamat = '$alamat'
+        WHERE ktp = '$ktp'";
 
 $result = $connect->query($sql);
 
-if($result){
-    if($old_image != $new_image){
-        //image name is different or if has new image
-        unlink("../image".$old_image);
-        file_put_contents("../image".$new_image, base64_decode($new_base64code));
-    }
-
-    echo json_encode(array("success"=>true));
-}else{
-    echo json_encode(array("success"=>false));
+if ($result) {
+    echo '<script>alert("Data berhasil diedit");
+    window.location.href = "index.php";
+    </script>';
+} else {
+    echo "Error updating record: " . $connect->error;
 }
+
+?>
