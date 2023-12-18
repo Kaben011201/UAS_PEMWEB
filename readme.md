@@ -1,12 +1,14 @@
 # UAS Pemrograman Web
 ## Bendry Lakburlawal, 121140111, RB
-Website (hosting) : loremIpsum
+Link Web : https://121140111-uas-pemweb.000webhostapp.com
 
-Username : 
+Website (hosting) : 000Webhost
 
-Password :
+Username : id21685420_121140111_uas_pemweb
 
+Password :121140111_Uas
 
+Database : id21685420_jemaat
 ## Bagian 1: Client-side Programming
 berikut merupakan kode yang berfungsi untuk melakukan update pada data website
 ```php
